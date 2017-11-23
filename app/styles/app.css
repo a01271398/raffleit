@@ -1,0 +1,10 @@
+.carousel{
+	height: 600px!important;
+}
+nav{
+	background: #00BCD2;
+}
+li{
+	padding-left: 10px;
+	padding-right: 10px;
+}

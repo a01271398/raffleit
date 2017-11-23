@@ -1,0 +1,51 @@
+{{#init-component c="sidenav" }}
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right hide-on-med-and-down"><img src="">Logo</a>
+
+      <a href="" class="brand-logo left hide-on-large-only">Logo</a>
+      <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down" style="margin-right: 14%;">
+        <li class="active">Populares</li>
+      </ul>
+    </div>
+  </nav>
+  <ul id="slide-out" class="side-nav">
+    {{#if session.isAuthenticated}}
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="https://www.viajejet.com/wp-content/viajes/Quesadillas.jpg">
+          </div>
+          <a href="#!user"><img class="circle" src="media/anonim.png"></a>
+          <a href="#!name"><span class="white-text name">Usuario</span></a>
+          <a href="#!email"><span class="white-text email">{{user}}</span></a>
+        </div>
+      </li>
+      <li><a {{action 'signOut'}}>Cerrar Sesión</a></li>
+    {{else}}
+      <li>
+        <div class="userView">
+          <div class="background">
+            <img src="media/local.jpg">
+          </div>
+          <a href="#"><img class="circle" src="media/logobg.png"></a>
+          <a><span class="white-text name">Panadería La Villita</span></a>
+        </div>
+      </li>
+    {{/if}}
+    <li><a href="#pedidos" {{action 'pedidos'}}><i class="material-icons">shopping_cart</i><span>${{cartTotal}}</span></a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <div class="hide-on-large-only">
+      <li><a href="#historia"><i class="material-icons">import_contacts</i>Historia</a></li>
+      <li><a href="#sucursales"><i class="material-icons">store_mall_directory</i>Sucursales</a></li>
+      <li><a href="#productos"><i class="material-icons">restaurant_menu</i>Productos</a></li>
+      {{#unless session.isAuthenticated}}
+        <li><a href="#login"><i class="material-icons">person</i>Ingresar</a></li>
+        <li><a href="#register"><i class="material-icons">person_add</i>Registrarse</a></li>
+      {{/unless}}
+    </div>
+  </ul>
+{{/init-component}}
