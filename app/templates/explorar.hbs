@@ -1,0 +1,56 @@
+<div class="row" style="background: #00BCD2;">
+	<div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Buscar</label>
+        </div>
+      </div>
+    </div>
+    {{#init-component c="material-select"}}
+    <div class="input-field col s6 m4">
+    <select>
+      <option value="" disabled selected>Selecciona una opcion</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      </select>
+    <label>Filtrar por</label>
+  </div>
+  {{/init-component}}
+  {{#init-component c="material-select"}}
+    <div class="input-field col s6 m4">
+    <select>
+      <option value="" disabled selected>Selecciona una opcion</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      </select>
+    <label>Fecha</label>
+  </div>
+  {{/init-component}}
+</div>
+<div class="row">
+<ul class="collection">
+    <li class="collection-item avatar">
+      <img src="https://yaesta.vteximg.com.br/arquivos/ids/234992-500-500/26506_B500_left.png?v=636397163859700000" alt="" class="circle">
+      <b class="title">Rifa Camara Cannon</b>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a pharetra dolor, et commodo mi. Morbi eget aliquet eros. Aenean aliquet urna at magna scelerisque, quis ultrices nibh dictum.
+      </p>
+      <b>$990.00</b>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+  </ul>
+</div>
+<div class="row">
+<div class="col s12" style="position: fixed;right:0;top:93%;">
+<ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s2"><a class="active" href="#test-swipe-1"><i class="material-icons">search</i></a></li>
+    <li class="tab col s2"><a href="#test-swipe-2"><i class="material-icons">stars</i></a></li>
+    <li class="tab col s2"><a href="#test-swipe-3"><i class="material-icons">home</i></a></li>
+    <li class="tab col s3"><a href="#test-swipe-3"><i class="material-icons">textsms</i></a></li>
+    <li class="tab col s3"><a href="#test-swipe-3"><i class="material-icons">person</i></a></li>
+  </ul>
+</div>
+</div>

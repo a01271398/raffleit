@@ -8,7 +8,10 @@ export default Ember.Component.extend({
         break;
       case "sidenav":
         this.$(".button-collapse").sideNav({edge: 'right'});
-
+        break;
+        case "material-select":
+        this.$('select').material_select();
+        break;
     }
   }
 });

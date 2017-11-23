@@ -1,0 +1,20 @@
+{
+  "name": "raffleit",
+  "description": "Small description for raffleit goes here",
+  "main": "",
+  "authors": [
+    "none"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/a01271398/raffleit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.2"
+  }
+}
