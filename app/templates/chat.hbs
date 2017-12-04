@@ -1,0 +1,13 @@
+ <ul class="collection">
+    {{#each model as |chat|}}
+      
+      <li class="collection-item avatar">
+      <img src="https://i2.wp.com/img.weblogssl.com/css/genbeta/p/v7/images/avatar.jpg?ssl=1">
+      {{#link-to 'chat-view' chat.id class="title"}}{{chat.usuarios.lastObject.nombre}} y {{chat.usuarios.firstObject.nombre}}{{/link-to}}<br>
+
+      {{if chat.messages.lastObject.texto chat.messages.lastObject.texto 'No hay mensajes'}}
+    </li>
+    {{else}}
+    Aun no tienes ningun chat
+    {{/each}}
+  </ul>

@@ -1,0 +1,64 @@
+<nav>
+  <div class="nav-wrapper">
+    {{#link-to 'explorar'}}<i class="large material-icons left">arrow_back</i>Volver{{/link-to}}
+    <a href="#" class="brand-logo center">Rifa {{if model.nombre model.nombre 'sin nombre'}}</a>
+  </div>
+</nav>
+<img src="{{model.portada}}" style="width:100%;">
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h3>{{model.nombre}}</h3>
+      <h5>Descripción</h5>
+      <p>{{model.descripcion}}</p>
+      <div class="col s12">
+        <h4>Información del organizador</h4>
+        <div class="row">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Jablopio_anonim.svg/2000px-Jablopio_anonim.svg.png">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <h2>{{model.dueno.nombre}}</h2>
+                <p>Correo de contacto: {{model.dueno.email}}</p>
+                <a {{action 'goToChat' model.dueno.id}}class="waves-effect waves-light btn">Enviar mensaje</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h4>Informacion de la rifa</h4> Precio por boleto: {{model.boleto}}
+          <br> Participantes: {{model.participando.length}}/{{model.participantes}}
+          <br>
+          <div class="progress">
+            <div class="determinate" style="width: {{porcentaje}}%"></div>
+          </div>
+          Fecha de inicio:{{model.fechainicio}}
+          <br> Fecha de fin: {{model.fechafin}}
+          <br>
+          {{#if model.lugar}}
+          Lugar: {{model.lugar}}<br>
+          {{/if}}
+        </div>
+        <div class="row">
+          <h5>Premios</h5>
+          <ul class="collection">
+            {{#each model.premios as |premio|}}
+              <li class="collection-item avatar">
+                <img src="{{premio.foto}}" alt="" class="circle">
+                <b>{{premio.nombre}}</b>
+                <p>{{premio.descripcion}}
+                </p>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="fixed-action-btn">
+    <a {{action 'register'}} class="waves-effect waves-light btn">Registrarme</a>
+  </div>

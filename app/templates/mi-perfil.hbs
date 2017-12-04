@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <center>
+    <div class="card">
+      <div class="card-image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Jablopio_anonim.svg/2000px-Jablopio_anonim.svg.png" style="width:200px;">
+        <span class="card-title black-text">Mi perfil</span>
+      </div>
+      <div class="card-content">
+        <label> Nombre </label><br>
+        {{model.nombre}}<br>
+         <label> Apellido </label><br>
+        {{model.apellidos}}<br>
+         <label> Email registrado </label><br>
+        {{model.email}}<br>
+        <label> Edad </label><br>
+        {{model.edad}} años<br>
+
+      </div>
+      <div class="card-action">
+        {{#link-to 'edit-perfil' model.id}}Editar{{/link-to}}
+        <a {{action 'logOut'}}href="#">Cerrar Sesión</a>
+      </div>
+    </div>
+  </center>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+  Favoritos
+<div class="row">
+  {{#rifa-filter
+   filter=(action 'filterByText')
+   as |rifas|}}
+  <ul class="collection">
+    {{#each rifas as |rifa|}}
+      
+      <li class="collection-item avatar">
+      <img src="{{rifa.portada}}" alt="" class="circle">
+      {{#link-to 'ver-rifa' rifa.id class="title"}}{{rifa.nombre}}{{/link-to}}
+      <p>{{rifa.descripcion}}
+      </p>
+      <b>Boleto: {{rifa.boleto}}</b>
+      <a href="#!" {{action 'removeFromFavorites' rifa}} class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    {{/each}}
+  </ul>
+{{/rifa-filter}}
+</div>

@@ -1,0 +1,30 @@
+<div class="hide-on-small-only">
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="{{rifa.portada}}" style="width:200px">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h3>{{rifa.nombre}}</h3>
+        <p>{{rifa.descripcion}}</p>
+      </div>
+      <div class="card-action">
+        {{#link-to 'editar-rifa' rifa.id}}Editar{{/link-to}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hide-on-med-and-up">
+  <div class="card">
+    <div class="card-image">
+      <img src="{{rifa.portada}}" style="width:200px">
+    </div>
+    <div class="card-content">
+      <h3>{{rifa.nombre}}</h3>
+        <p>{{rifa.descripcion}}</p>
+    </div>
+    <div class="card-action">
+      {{#link-to 'editar-rifa' rifa.id}}Editar{{/link-to}}
+    </div>
+  </div>
+</div>

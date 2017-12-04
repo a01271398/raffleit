@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <center>
+    <div class="card" style=" background: #00BCD2;">
+      <div class="card-image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Jablopio_anonim.svg/2000px-Jablopio_anonim.svg.png" style="width:200px;">
+        <span class="card-title">Mi perfil</span>
+      </div>
+      <div class="card-content" style="height:260px;">
+
+        {{#init-component c="updateTF"}}
+
+       <div class="input-field col s12 m8 offset-m2">
+          <i class="material-icons prefix">account_circle</i>
+          {{input id="name" type="text" class="validate c-w" value=model.nombre}}
+          <label for="name">Nombre</label>
+        </div>
+        <div class="input-field col s12 m8 offset-m2">
+          <i class="material-icons prefix">account_circle</i>
+          {{input id="last_name" type="text" class="validate c-w" value=model.apellidos}}
+          <label for="last_name">Apellido</label>
+        </div>
+        <div class="input-field col s12 m8 offset-m2">
+          <i class="material-icons prefix">filter_tilt_shift</i>
+          {{input id="age" type="number" class="validate c-w" value=model.edad}}
+          <label for="age">Edad</label>
+        </div>
+
+        {{/init-component}}
+
+      </div>
+      <div class="card-action">
+
+        <a {{action 'save' model}}class="waves-effect waves-light btn">Guardar</a>
+      </div>
+    </div>
+  </center>
+  </div>
+</div>

@@ -12,6 +12,12 @@ export default Ember.Component.extend({
         case "material-select":
         this.$('select').material_select();
         break;
+        case "updateTF":
+        window.Materialize.updateTextFields();
+        break;
+        case "tabs":
+        this.$('ul.tabs').tabs();
+        break;
     }
   }
 });

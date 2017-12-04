@@ -1,0 +1,25 @@
+<h6>Premio</h6>
+<a {{action 'borrar' premio}}class="waves-effect waves-light btn"><i class="material-icons right">delete</i>Borrar</a>
+<form>
+  <div class="input-field col s12 cb">
+    <i class="material-icons prefix cb">business</i> {{input type="number" class="validate cb" value=premio.lugar}}
+    <label for="name" class="cb">Lugar del premio</label>
+  </div>
+  <div class="input-field col s12 cb">
+    <i class="material-icons prefix cb">business_center</i> {{input type="text" class="validate cb" value=premio.nombre}}
+    <label for="name" class="cb">Nombre</label>
+  </div>
+  <div class="input-field col s12 cb">
+    {{textarea value=premio.descripcion cols="80" rows="8" class="h150 materialize-textarea cb"}}
+    <label for="textarea1" class="cb">Descripción</label>
+  </div>
+  <div class="col s12">
+    <h5>Foto</h5>
+    <br>
+    <div class="input-field col s12 cb">
+      <i class="material-icons prefix cb">image</i> {{input  type="text" class="validate cb" value=premio.foto}}
+      <label for="name" class="cb">Link</label>
+    </div>
+  </div>
+  
+</form>

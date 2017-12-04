@@ -30,6 +30,17 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.firebase = {
+      apiKey: "AIzaSyB6cDJWkL2CoNzZjMhs0efEbjUdNvo5U14",
+      authDomain: "raffleit-b6e9c.firebaseapp.com",
+      databaseURL: "https://raffleit-b6e9c.firebaseio.com",
+      projectId: "raffleit-b6e9c",
+      storageBucket: "raffleit-b6e9c.appspot.com",
+      messagingSenderId: "283953254843"
+    },
+    ENV.torii = {
+      sessionServiceName: 'session'
+    }
   }
 
   if (environment === 'test') {

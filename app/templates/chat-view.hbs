@@ -1,0 +1,19 @@
+ <ul class="collection">
+    {{#each model.messages as |message|}}
+      <li class="collection-item avatar">
+      <img src="https://i2.wp.com/img.weblogssl.com/css/genbeta/p/v7/images/avatar.jpg?ssl=1">
+      <b>{{message.dueno.nombre}}</b>
+      <p>{{message.texto}}</p>
+    </li>
+    {{else}}
+    No hay mensajes
+    {{/each}}
+  </ul>
+  <div class="input-field col s8 cb">
+            {{textarea value=texto cols="80" rows="8" class="h150 materialize-textarea cb"}}
+            <label for="textarea1" class="cb">Escribe tu mensaje</label>
+  </div>
+  <div class="col s4">
+    <a {{action 'send' texto}}class="waves-effect waves-light btn">Enviar</a>
+
+  </div>

@@ -1,0 +1,12 @@
+<div class="row white-text" style="background: #00BCD2;">
+	<div class="col s12">
+      <div class="row">
+        <div class="input-field w col s12">
+          <i class="material-icons prefix">search</i>
+          {{input type="text" id="autocomplete-input" class="autocomplete w" value=value placeholder="Buscar" key-up=(action 'handleFilterEntry')}}
+          <label for="autocomplete-input">Buscar</label>
+        </div>
+      </div>
+    </div>
+</div>
+{{yield results}}

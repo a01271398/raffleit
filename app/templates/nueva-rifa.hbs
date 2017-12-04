@@ -1,0 +1,109 @@
+<nav>
+  <div class="nav-wrapper">
+    {{#link-to 'principal'}}<i class="large material-icons left">arrow_back</i>Volver{{/link-to}}
+    <a href="#" class="brand-logo center">Rifa {{if model.nombre model.nombre 'sin nombre'}}</a>
+  </div>
+</nav>
+<div class="container">
+  <div class="row" style="padding-top:10px;">
+    <div class="col s8 offset-s2 center-align">
+      <form>
+        <div class="input-field col s12 cb">
+          <i class="material-icons prefix cb">account_circle</i> {{input id="name" type="text" class="validate cb" value=model.nombre}}
+          <label for="name" class="cb">Nombre</label>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <h5>Foto de portada</h5>
+            <br>
+            <div class="input-field col s12 cb">
+              <i class="material-icons prefix cb">image</i> {{input id="portada" type="text" class="validate cb" value=model.portada}}
+              <label for="name" class="cb">Link</label>
+            </div>
+          </div>
+        </div>
+        {{#if model.portada}}
+          <div class="row">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{model.portada}}">
+                <span class="card-title">Portada</span>
+              </div>
+            </div>
+          </div>
+        {{/if}}
+        <div class="row">
+          <div class="input-field col s12 cb">
+            {{textarea value=model.descripcion cols="80" rows="8" class="h150 materialize-textarea cb"}}
+            <label for="textarea1" class="cb">Descripción</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <h5>Visibilidad de rifa </h5>
+            <div class="switch">
+              <label>
+                Pública {{input type="checkbox" checked=model.publica}}
+                <span class="lever"></span> Privada
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h5>Fecha inicio </h5>
+          <div class="input-field col s12 cb">
+            <i class="material-icons prefix cb">date_range</i> {{input type="date" class="validate cb" value=model.fechainicio}}
+          </div>
+        </div>
+        <div class="row">
+          <h5>Fecha fin </h5>
+          <div class="input-field col s12 cb">
+            <i class="material-icons prefix cb">date_range</i> {{input type="date" class="validate cb" value=model.fechafin}}
+          </div>
+        </div>
+        <div class="row">
+          <h5>Datos de la rifa</h5>
+          <div class="input-field col s12 cb">
+            <i class="material-icons prefix cb">people</i> {{input type="number" class="validate cb" value=model.participantes}}
+             <label for="name" class="cb">Numero de participantes</label>
+          </div>
+          <div class="input-field col s12 cb">
+            <i class="material-icons prefix cb">attach_money</i> {{input type="number" class="validate cb" value=model.boleto}}
+            <label for="name" class="cb">Precio por boleto</label>
+          </div>
+          <div class="col s12">
+            <div class="col s6 offset-s6 right-align">
+              Total: {{total}}
+              <br> Comisión: -{{comision}}
+              <br> Ganancia: {{ganancia}}
+              <br>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h5>Lugar de la rifa</h5>
+          <div class="switch">
+            <label>
+              Deshabilitado {{input type="checkbox" checked=lugar}}
+              <span class="lever"></span> Habilitado
+            </label>
+          </div>
+          {{#if lugar}}
+            <div class="input-field col s12 cb">
+              <i class="material-icons prefix cb">place</i> {{input type="text" class="validate cb" value=model.lugar}}
+            </div>
+          {{/if}}
+        </div>
+         <div class="row">
+          <h5>Premios</h5>
+          {{#each model.premios as |premio index|}}
+            {{premio-form premio=premio}}
+          {{/each}}
+          <a {{action 'addPremio' model}}class="waves-effect waves-light btn">Agregar premio</a>
+        </div>
+        <a {{action 'guardarTodo' model}}class="waves-effect waves-light btn"><i class="material-icons right">save</i>Guardar</a>
+      </form>
+    </div>
+  </div>
+</div>

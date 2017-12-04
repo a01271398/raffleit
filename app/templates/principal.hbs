@@ -1,0 +1,85 @@
+{{#init-component c="tabs" }}
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a href="#creadas" class="active">Creadas</a></li>
+        <li class="tab col s6"><a href="#part">Participando</a></li>
+      </ul>
+    </div>
+    <div id="creadas" class="col s12">
+      <div class="hide-on-small-only">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="http://fravega.vteximg.com.br/arquivos/ids/290481-1000-1000/CELULAR-LIBRE-SAMSUNG-GALAXY-J7-4G-BLACK.jpg?v=636153878917330000" style="width:200px">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <h3>Añadir rifa</h3>
+              <p>Registra una nueva rifa</p>
+            </div>
+            <div class="card-action">
+              {{#link-to 'nueva-rifa'}}¡Iniciar!{{/link-to}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hide-on-med-and-up">
+        <div class="card">
+          <div class="card-image">
+            <img src="http://fravega.vteximg.com.br/arquivos/ids/290481-1000-1000/CELULAR-LIBRE-SAMSUNG-GALAXY-J7-4G-BLACK.jpg?v=636153878917330000" style="width:200px">
+          </div>
+          <div class="card-content">
+            <h3>Añadir rifa</h3>
+            <p>Registra una nueva rifa</p>
+          </div>
+          <div class="card-action">
+            {{#link-to 'nueva-rifa'}}¡Iniciar!{{/link-to}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {{#each model.rifas as |creada|}}
+         {{card-view rifa=creada}}
+        {{/each}}
+      </div>
+    </div>
+    <div id="part" class="col s12">
+      <div class="row">
+        {{#each model.participando as |rifa|}}
+         <div class="hide-on-small-only">
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="{{rifa.portada}}" style="width:200px">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h3>{{rifa.nombre}}</h3>
+        <p>{{rifa.descripcion}}</p>
+      </div>
+      <div class="card-action">
+        {{#link-to 'ver-rifa' rifa.id}}Ver{{/link-to}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hide-on-med-and-up">
+  <div class="card">
+    <div class="card-image">
+      <img src="{{rifa.portada}}" style="width:200px">
+    </div>
+    <div class="card-content">
+      <h3>{{rifa.nombre}}</h3>
+        <p>{{rifa.descripcion}}</p>
+    </div>
+    <div class="card-action">
+      {{#link-to 'ver-rifa' rifa.id}}Ver{{/link-to}}
+    </div>
+  </div>
+</div>
+         {{else}}
+         Aun no estás registrado en ninguna rifa
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/init-component}}
